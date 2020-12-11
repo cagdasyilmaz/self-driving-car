@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bakker1987}
+E.~Bakker, L.~Nyborg, and H.~B. Pacejka.
+\newblock Tyre modelling for use in vehicle dynamics studies.
+\newblock In {\em SAE Technical Paper}. SAE International, 02 1987.
+
+\bibitem{Borrelli2005}
+F.~Borrelli, P.~Falcone, T.~Keviczky, J.~Asgari, and D.~Hrovat.
+\newblock Mpc-based approach to active steering for autonomous vehicle systems.
+\newblock {\em International Journal of Vehicle Autonomous Systems},
+  3:265--291, 2005.
+
+\bibitem{Kong2015}
+J.~{Kong}, M.~{Pfeiffer}, G.~{Schildbach}, and F.~{Borrelli}.
+\newblock Kinematic and dynamic vehicle models for autonomous driving control
+  design.
+\newblock In {\em 2015 IEEE Intelligent Vehicles Symposium (IV)}, pages
+  1094--1099, 2015.
+
+\bibitem{Rajamani2011}
+R.~Rajamani.
+\newblock {\em Vehicle Dynamics and Control}.
+\newblock Mechanical Engineering Series. Springer US, 2011.
+
+\end{thebibliography}

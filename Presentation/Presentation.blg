@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Presentation.aux
+The style file: biblatex.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: Presentation-blx.bib
+Database file #2: bibfile.bib
+Biblatex version: 3.8
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 3 entries,
+            6268 wiz_defined-function locations,
+            1195 strings with 9723 characters,
+and the built_in function-call counts, 16286 in all, are:
+= -- 1051
+> -- 427
+< -- 101
++ -- 498
+- -- 193
+* -- 1277
+:= -- 1860
+add.period$ -- 0
+call.type$ -- 3
+change.case$ -- 39
+chr.to.int$ -- 38
+cite$ -- 4
+duplicate$ -- 1687
+empty$ -- 1329
+format.name$ -- 215
+if$ -- 3314
+int.to.chr$ -- 0
+int.to.str$ -- 5
+missing$ -- 0
+newline$ -- 115
+num.names$ -- 102
+pop$ -- 757
+preamble$ -- 1
+purify$ -- 61
+quote$ -- 0
+skip$ -- 538
+stack$ -- 0
+substring$ -- 1692
+swap$ -- 424
+text.length$ -- 101
+text.prefix$ -- 2
+top$ -- 1
+type$ -- 90
+warning$ -- 0
+while$ -- 248
+width$ -- 0
+write$ -- 113

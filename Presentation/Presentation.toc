@@ -1,0 +1,26 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{Modelling}{8}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{1}{Vehicle Model}{8}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{2}{State Equations}{11}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {2}{3}{Tire Model}{13}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@subsubsectionintoc {2}{3}{1}{Proposed Tyre Formulas}{17}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Problem Formulation}{19}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Double Lane Change Using Active Steering}{21}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {4}{1}{Scenario Description}{21}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Simulation Results}{24}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {5}{1}{Simulation Results via MATLAB \& YALMIP}{24}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@subsectionintoc {5}{2}{Simulation Results via C++ \& IPOPT, cppAD, matplotlibcpp}{26}{0}{5}
