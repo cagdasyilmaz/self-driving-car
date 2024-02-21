@@ -1,6 +1,6 @@
-# self-driving-car-lane-changing-cpp-and-matlab
+# Simuulations of lane-changing for a self driving car example with C++/MATLAB Implementation
 
-Welcome to the self-driving-car-lane-changing-cpp-and-matlab wiki!
+Welcome to the wiki of the repository!
 
 In this repository, Nonlinear Model Predictive Controller (NMPC) which is examined in the article "MPC-Based Approach to Active Steering for Autonomous Vehicle Systems" from F. Borrelli et al. is utilized for lane change maneuvering using active steering control. 
 
