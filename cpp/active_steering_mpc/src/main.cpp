@@ -1,16 +1,37 @@
-#include <math.h>
-#include <iostream>
-#include <vector>
-#include <ctime>
+/****************************************************************************
+ * MIT License
+ *
+ * Copyright (c) 2019 İsmail Çağdaş Yılmaz
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ ****************************************************************************/
 
-#include "Eigen-3.3/Eigen/Core"
-#include "Eigen-3.3/Eigen/QR"
-#include "KinematicsDynamicsCalculations.h"
 #include "helpers.h"
-#include "matplotlibcpp_.h"
+#include "matplotlibcpp.h"
 #include "MPC.h"
 #include "TireCalculations.h"
 #include "ReferenceGenerator.h"
+
+#include <iostream>
+#include <ctime>
+
 namespace plt = matplotlibcpp;
 
 using Eigen::VectorXd;
@@ -26,18 +47,20 @@ constexpr double pi() { return M_PI; }
 double deg2rad(double x) { return x * pi() / 180; }
 double rad2deg(double x) { return x * 180 / pi(); }
 
-int main() {
-    MPC mpc;        // define Model Predective Control Class
-    int iters = 50; // maximum iteration
+int main()
+{
+    MPC mpc;        // declaration of the Model Predective Control Class
 
-    VectorXd ptsx(2);
-    VectorXd ptsy(2);
-    ptsx << -200, 200;
-    ptsy << -5, -5;
+    VectorXd x_points(2);
+    VectorXd y_points(2);
+    x_points << -200, 200;
+    y_points << -5, -5;
 
-    // The polynomial is fitted to a straight line so a polynomial with
-    // order 1 is sufficient.
-    auto coeffs = polyfit(ptsx, ptsy, 1);
+    /**
+     * The polynomial is fitted to a straight line so a polynomial with
+     * order 1 is sufficient.
+     */
+    auto coeffs = polyfit(x_points, y_points, 1);
 
 
     // NOTE: Initial values of the state equations
@@ -52,13 +75,11 @@ int main() {
     VectorXd state(5);
     state << X, Y, psi, vy, r;
 
-
     TireCalculations tire(0.0f, vx, vy, r);
     vector<double> alphaF_vals = {rad2deg(tire.getAlphaFront())};
     vector<double> alphaR_vals = {rad2deg(tire.getAlphaRear())};
     vector<double> FyF_vals = {tire.getFyFront()};
     vector<double> FyR_vals = {tire.getFyRear()};
-
 
     vector<double> simTime = {0.0};
     vector<double> x_vals = {state[0]};
@@ -116,19 +137,18 @@ int main() {
         FyR_vals.push_back(tire.getFyRear());
 
         state << vars[0], vars[1], vars[2], vars[3], vars[4];
-        /*
+
+        /**
          * Write variable and optimized output
-         */
-        // cout << "x = " << vars[0] << endl;
-        // cout << "y = " << vars[1] << endl;
-        // cout << "psi = " << vars[2] << endl;
-        // cout << "vy = " << vars[3] << endl;
-        // cout << "r = " << vars[4] << endl;
 
-        // cout << "delta = " << vars[5] << endl;
-
+        cout << "x     = " << vars[0] << endl;
+        cout << "y     = " << vars[1] << endl;
+        cout << "psi   = " << vars[2] << endl;
+        cout << "vy    = " << vars[3] << endl;
+        cout << "r     = " << vars[4] << endl;
+        cout << "delta = " << vars[5] << endl;
+        */
         X = vars[0];
-
         cout << endl;
     }
 

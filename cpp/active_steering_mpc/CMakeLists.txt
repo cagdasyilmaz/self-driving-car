@@ -5,34 +5,36 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-# -g allows for gdb debugging
-# turn on -03 for best performance
-add_definitions(-std=c++14)
+set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_CXX_COMPILER "/usr/bin/g++-11")
+set(CMAKE_CXX_COMPILER "/usr/bin/clang++-12")
+#set(CMAKE_CXX_COMPILER "/opt/intel/oneapi/compiler/2023.1.0/linux/bin/icpx")
 
 #set(CXX_FLAGS "-Wall")
 #set(CMAKE_CXX_FLAGS "${CXX_FLAGS}")
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffast-math")
 #set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-
-
-set(sources src/main.cpp src/KinematicsDynamicsCalculations.h
-        src/KinematicsDynamicsCalculations.cpp src/TireCalculations.h src/TireCalculations.cpp
-        src/MPC.cpp src/ReferenceGenerator.h src/ReferenceGenerator.cpp)
+#add_compile_definitions(_GLIBCXX_USE_CXX11_ABI=0)
+set(CMAKE_CXX_FLAGS_RELEASE "-O2")
 
 include_directories(/usr/local/include)
-include_directories(/usr/include/python2.7)
-include_directories(src/Eigen-3.3)
+include_directories(/usr/include)
+link_directories(/usr/lib)
+link_directories(/usr/lib64)
 link_directories(/usr/local/lib)
-link_directories(/usr/bin)
 
-add_executable(active_steering_mpc ${sources})
+include_directories(/usr/include/python3.8/)
+include_directories(/usr/local/lib/python3.8/site-packages/)
 
-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-    target_link_libraries(active_steering_mpc ipopt python2.7)
-else()
-    target_link_libraries(active_steering_mpc ipopt python2.7)
-endif()
+set(sources src/main.cpp src/KinematicsDynamicsCalculations.h
+            src/KinematicsDynamicsCalculations.cpp src/TireCalculations.h src/TireCalculations.cpp
+            src/MPC.cpp src/ReferenceGenerator.h src/ReferenceGenerator.cpp)
+
+set(CommonLibs cppad_lib ipopt python3.8)
+
+add_executable(${PROJECT_NAME} ${sources})
+target_link_libraries(${PROJECT_NAME} ${CommonLibs})
